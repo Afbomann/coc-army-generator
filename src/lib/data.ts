@@ -1,11 +1,15 @@
+export type TType = "elixir" | "dark elixir";
+export type TMovement = "flying" | "ground";
+export type TUsage = "hero" | "attack" | "both" | "flying" | "ground";
+
 export type TTroop = {
   name: string;
   image: string;
   townHallLevel: number;
   housingSpace: number;
   superTroop: boolean;
-  type: "elixir" | "dark elixir";
-  movement: "flying" | "ground";
+  type: TType;
+  movement: TMovement;
 };
 
 export const troops: TTroop[] = [
@@ -430,8 +434,8 @@ export type TSpell = {
   image: string;
   townHallLevel: number;
   housingSpace: number;
-  type: "elixir" | "dark elixir";
-  usage: "hero" | "attack" | "both" | "flying" | "ground";
+  type: TType;
+  usage: TUsage;
 };
 
 export const spells: TSpell[] = [

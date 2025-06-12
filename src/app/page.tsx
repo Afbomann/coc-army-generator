@@ -1,6 +1,14 @@
 "use client";
 
-import { troops, TTroop, TSpell, spells } from "@/lib/data";
+import {
+  troops,
+  TTroop,
+  TSpell,
+  spells,
+  TType,
+  TMovement,
+  TUsage,
+} from "@/lib/data";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -193,7 +201,8 @@ export default function HomePage() {
             value={options.type}
             onChange={(e) =>
               setOptions(
-                (prev) => (prev = { ...prev, type: e.target.value as any })
+                (prev) =>
+                  (prev = { ...prev, type: e.target.value as "all" | TType })
               )
             }
           >
@@ -211,7 +220,11 @@ export default function HomePage() {
             value={options.movement}
             onChange={(e) =>
               setOptions(
-                (prev) => (prev = { ...prev, movement: e.target.value as any })
+                (prev) =>
+                  (prev = {
+                    ...prev,
+                    movement: e.target.value as "all" | TMovement,
+                  })
               )
             }
           >
@@ -229,7 +242,8 @@ export default function HomePage() {
             value={options.usage}
             onChange={(e) =>
               setOptions(
-                (prev) => (prev = { ...prev, usage: e.target.value as any })
+                (prev) =>
+                  (prev = { ...prev, usage: e.target.value as "all" | TUsage })
               )
             }
           >
