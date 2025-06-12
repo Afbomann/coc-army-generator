@@ -27,7 +27,7 @@ export default function HomePage() {
       }
     }
 
-    setGeneratedTroops((prev) => (prev = newTroops));
+    setGeneratedTroops(() => newTroops);
   }
 
   return (
@@ -39,9 +39,7 @@ export default function HomePage() {
           <input
             className="text-sm lg:text-base font-bold bg-gray-100 rounded-md px-3 py-2 outline-none"
             value={housingSpace}
-            onChange={(e) =>
-              setHousingSpace((prev) => (prev = parseInt(e.target.value)))
-            }
+            onChange={(e) => setHousingSpace(() => parseInt(e.target.value))}
             type="number"
             step={5}
           />
@@ -53,9 +51,7 @@ export default function HomePage() {
           <input
             className="text-sm lg:text-base font-bold bg-gray-100 rounded-md px-3 py-2 outline-none"
             value={townHallLevel}
-            onChange={(e) =>
-              setTownHallLevel((prev) => (prev = parseInt(e.target.value)))
-            }
+            onChange={(e) => setTownHallLevel(() => parseInt(e.target.value))}
             type="number"
             min={1}
             max={17}
